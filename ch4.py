@@ -25,15 +25,16 @@ def petal(t, radius, angle):
     arc(t, radius, angle)
 # %%
 def flower(t, petals, radius, angle):
-    angleOffset = 360/petals
+    angleOffset = 360/petals+180-angle
     for p in range(petals):
         petal(t, radius, angle)
         t.right(angleOffset)
 # %%
+turt.speed(0)
 #curve(turt, 10, 200, 5)
 #arc(turt, 200, 270)
-petal(turt, 200, 120)
-#flower(turt, 10, 200, 60)
+#petal(turt, 200, 120)
+flower(turt, 30, 200, 40)
 turtle.mainloop()
 # %%
 
