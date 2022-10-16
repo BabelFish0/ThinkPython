@@ -21,7 +21,7 @@ def arc(t, radius, angle):
 # %%
 def petal(t, radius, angle):
     arc(t, radius, angle)
-    t.right(90+angle/2)
+    t.right(180-angle)
     arc(t, radius, angle)
 # %%
 def flower(t, petals, radius, angle):
@@ -32,8 +32,8 @@ def flower(t, petals, radius, angle):
 # %%
 #curve(turt, 10, 200, 5)
 #arc(turt, 200, 270)
-#petal(turt, 200, 60)
-flower(turt, 10, 200, 60)
+petal(turt, 200, 120)
+#flower(turt, 10, 200, 60)
 turtle.mainloop()
 # %%
 
