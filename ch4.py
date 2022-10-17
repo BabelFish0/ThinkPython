@@ -34,8 +34,26 @@ turt.speed(0)
 #curve(turt, 10, 200, 5)
 #arc(turt, 200, 270)
 #petal(turt, 200, 120)
-flower(turt, 30, 200, 40)
-turtle.mainloop()
+#flower(turt, 30, 200, 40)
+#turtle.mainloop()
+# %% [markdown]
+# ex 4-3
 # %%
-
+def isoTri(t, topAngle, base):
+    baseAngle = 0.5*(math.pi-topAngle)
+    sideLength = math.sin(baseAngle)*(base/math.sin(topAngle))
+    t.forward(sideLength)
+    t.left(360*((math.pi-baseAngle)/(2*math.pi)))
+    t.forward(base)
+    t.left(360*((math.pi-baseAngle)/(2*math.pi)))
+    t.forward(sideLength)
+# %%
+def polygon(t, sides, sideLength):
+    for n in range(sides):
+        isoTri(t, (2*math.pi)/sides, sideLength)
+        t.right(180)
+# %%
+#isoTri(turt, 1.8, 500)
+polygon(turt, 60, 10)
+turtle.mainloop()
 # %%
