@@ -64,7 +64,7 @@ def polygon(t, sides, sideLength):
 def magnitude(t):
     x = t.xcor()
     y = t.ycor()
-    return sqrt(x^2+y^2)
+    return math.sqrt(x^2+y^2)
 def theta(t):
     x = t.xcor()
     y = t.ycor()
