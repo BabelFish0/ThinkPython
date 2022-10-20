@@ -54,6 +54,23 @@ def polygon(t, sides, sideLength):
         t.right(180)
 # %%
 #isoTri(turt, 1.8, 500)
-polygon(turt, 60, 10)
-turtle.mainloop()
+#polygon(turt, 60, 10)
+#turtle.mainloop()
+# %% [markdown]
+# skip ex 4-4
+# ex 4-5
 # %%
+# draw an Archimedean spiral
+def magnitude(t):
+    x = t.xcor()
+    y = t.ycor()
+    return sqrt(x^2+y^2)
+def theta(t):
+    x = t.xcor()
+    y = t.ycor()
+    return math.atan(y/x)
+def cartesian(theta, r):
+    x = r*math.cos(theta)
+    y = r*math.sin(theta)
+    return x, y
+
