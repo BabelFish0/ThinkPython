@@ -74,3 +74,13 @@ def cartesian(theta, r):
     y = r*math.sin(theta)
     return x, y
 
+def spiral(t, segments, segmentLength, a, b):
+    theta = 0.0
+    for segment in range(segments):
+        t.fd(segmentLength)
+        dtheta = segmentLength/(a+b*theta)
+        t.lt(dtheta)
+        theta += dtheta
+# %%
+spiral(turt, 1000, 3, 0.1, 0.001)
+turtle.mainloop()
