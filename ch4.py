@@ -75,10 +75,17 @@ def cartesian(theta, r):
     return x, y
 
 def spiral(t, segments, segmentLength, a, b):
+    '''
+    draws an Archimedean spiral (a linear graph in polar space).
+    turtle = t,
+    number of segments = segments,
+    length of each segment = segmentLength
+    eqn is r = a+b*theta
+    '''
     theta = 0.0
     for segment in range(segments):
         t.fd(segmentLength)
-        dtheta = segmentLength/(a+b*theta)
+        dtheta = segmentLength/(a+b*theta) #see maths notes -> approximates angle between close tangents on edge of a spiral
         t.lt(dtheta)
         theta += dtheta
 # %%
