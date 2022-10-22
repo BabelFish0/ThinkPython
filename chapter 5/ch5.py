@@ -85,6 +85,37 @@ def snowflake(t, x):
         koch(t, x)
         t.rt(120)
 # %%
+#turt.speed(0)
+#snowflake(turt, 200)
+#turtle.mainloop()
+# %% [markdown]
+# partially generalise koch curve
+# %%
+def gen_koch(t, x, s, operator):
+    '''
+    generate koch curve using:
+    recursion count * min segment length 'x',
+    min segment length 's'
+    turtle object 't',
+    and the angle to turn each time 360 / 'operator'.
+    '''
+    if x >= s:
+        gen_koch(t, x/3, s, operator)
+        t.lt(180-360/operator)
+        for n in range(operator-1):
+            gen_koch(t, x/3, s, operator)
+            t.rt(360/operator)
+        t.lt(180)
+        gen_koch(t, x/3, s, operator)
+    else:
+        t.fd(x)
+# %%
 turt.speed(0)
-snowflake(turt, 200)
+turt.color('black')
+gen_koch(turt, 250, 5, 5)
+turt.penup()
+turt.goto(0, 0)
+turt.pendown()
+turt.color('red')
+gen_koch(turt, 250, 150, 5)
 turtle.mainloop()
