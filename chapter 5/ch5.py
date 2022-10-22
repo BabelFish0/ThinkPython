@@ -59,4 +59,32 @@ def draw(t, length, n):
 # %%
 import turtle
 turt = turtle.Turtle()
-draw(turt, 50, 5)
+#draw(turt, 50, 5)
+# %% [markdown]
+# ex 5-6
+# %%
+import random
+bound = 0
+def koch(t, x):
+    if x >= 3:
+        koch(t, x/3)
+        t.lt(60 + random.uniform(-bound, bound))
+        koch(t, x/3)
+        t.rt(120 + random.uniform(-bound, bound))
+        koch(t, x/3)
+        t.lt(60 + random.uniform(-bound, bound))
+        koch(t, x/3)
+    else:
+        t.fd(x)
+# %%
+#koch(turt, 200)
+#turtle.mainloop()
+# %%
+def snowflake(t, x):
+    for edge in range(3):
+        koch(t, x)
+        t.rt(120)
+# %%
+turt.speed(0)
+snowflake(turt, 200)
+turtle.mainloop()
