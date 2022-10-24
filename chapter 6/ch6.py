@@ -90,3 +90,11 @@ def is_power(a, b):
     else:
         return is_power(a/b, b)
 print(is_power(1024, 2))
+# %% [markdown]
+# ex 6-5
+# %%
+def gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a%b)
