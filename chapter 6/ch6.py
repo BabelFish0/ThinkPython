@@ -47,7 +47,21 @@ def ack2(m, n):
         return ack2(m-1, 1)
     return ack2(m-1, ack2(m, n-1))
 # %%
-print(ack2(3, 4))
+print(ack2(3, 5))
 # %% [markdown]
 # extension look at ex 6-2
 # %%
+import matplotlib.pyplot as plt
+import numpy
+
+lim = 4
+
+Z = numpy.zeros((lim, lim))
+for x in range(lim):
+    for y in range(lim):
+        Z[x][y] = numpy.log(ack2(x, y))
+
+fig, ax = plt.subplots()
+c = ax.pcolor(Z)
+fig.colorbar(c, ax=ax)
+plt.show()
