@@ -47,7 +47,7 @@ def ack2(m, n):
         return ack2(m-1, 1)
     return ack2(m-1, ack2(m, n-1))
 # %%
-print(ack2(3, 5))
+#print(ack2(3, 5))
 # %% [markdown]
 # extension look at ex 6-2
 # %%
@@ -64,4 +64,19 @@ for x in range(lim):
 fig, ax = plt.subplots()
 c = ax.pcolor(Z)
 fig.colorbar(c, ax=ax)
-plt.show()
+#plt.show()
+# %% [markdown]
+# ex 6-3
+# %%
+def first(word):
+    return word[0]
+def last(word):
+    return word[-1]
+def middle(word):
+    return word[1:-1]
+def is_palindrome(word):
+    for letter in range(len(word)):
+        if not(word[letter] == word[len(word)-letter-1]):
+            return False
+    return True
+print(is_palindrome('dammitimmad'))
