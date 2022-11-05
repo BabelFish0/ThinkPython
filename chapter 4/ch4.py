@@ -34,8 +34,8 @@ turt.speed(0)
 #curve(turt, 10, 200, 5)
 #arc(turt, 200, 270)
 #petal(turt, 200, 120)
-#flower(turt, 30, 200, 40)
-#turtle.mainloop()
+# flower(turt, 30, 200, 40)
+# turtle.mainloop()
 # %% [markdown]
 # ex 4-3
 # %%
@@ -54,8 +54,8 @@ def polygon(t, sides, sideLength):
         t.right(180)
 # %%
 #isoTri(turt, 1.8, 500)
-#polygon(turt, 60, 10)
-#turtle.mainloop()
+# polygon(turt, 60, 10)
+# turtle.mainloop()
 # %% [markdown]
 # skip ex 4-4
 # ex 4-5
