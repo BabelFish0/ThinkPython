@@ -59,5 +59,19 @@ print(is_palindrome2('anna'))
 # 3) will return True/False for if the last character is lower case
 # 4) will return True if any character is lower case
 # 5) will return True if any character is lower case
+# 8-5
 # %%
-
+def rotate_letter(letter, shift):
+    if letter.isupper():
+        start = 'A'
+    elif letter.islower():
+        start = 'a'
+    else:
+        return letter
+    return chr((ord(letter) - ord(start)  + shift) % (26) + ord(start))
+def rotate_word(word, shift):
+    output = ''
+    for letter in word:
+        output += rotate_letter(letter, shift)
+    return output
+print(rotate_word('zelda', 1))
