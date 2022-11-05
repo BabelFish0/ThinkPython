@@ -39,3 +39,25 @@ def count2(target, string):
     return counter
 # %%
 print(count2('a', 'banana'))
+# %% [markdown]
+# exercises
+# 8-1 read
+# 8-2
+# %%
+str = 'banana'
+print(str.count('a'))
+# %% [markdown]
+# 8-3
+# %%
+def is_palindrome2(str):
+    return True if str == str[::-1] else False
+print(is_palindrome2('anna'))
+# %% [markdown]
+# 8-4
+# 1) will return True/False for if the first character is lower case, but will instantly break as it returns
+# 2) will always return True as it is just checking 'c' not c
+# 3) will return True/False for if the last character is lower case
+# 4) will return True if any character is lower case
+# 5) will return True if any character is lower case
+# %%
+
