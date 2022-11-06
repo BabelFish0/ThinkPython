@@ -6,3 +6,11 @@ fin = open("C:\\Users\\Jude Young\\Documents\\Coding\\DofE Project Gold\\ThinkPy
 for line in fin:
     if len(line.strip()) > 20:
         print(line.strip())
+# %% [markdown]
+# 9-2
+# %%
+def has_no_e(word):
+    for letter in word:
+        if letter == 'e':
+            return False
+    return True
