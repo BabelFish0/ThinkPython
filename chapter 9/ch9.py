@@ -14,6 +14,18 @@ def has_no_e(word):
         if letter == 'e':
             return False
     return True
-for line in fin:
-    if has_no_e(line.strip()):
-        print(line.strip())
+# for line in fin:
+#     if has_no_e(line.strip()):
+#         print(line.strip())
+# %% [markdown]
+# 9-3
+# %%
+def avoids(word, forbid):
+    for letter in word:
+        if letter in forbid:
+            return False
+    return True
+# forbid = input('Enter forbidden letters\n')
+# for line in fin:
+#     if avoids(line.strip(), forbid):
+#         print(line.strip())
