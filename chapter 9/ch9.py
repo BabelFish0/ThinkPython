@@ -25,7 +25,16 @@ def avoids(word, forbid):
         if letter in forbid:
             return False
     return True
-# forbid = input('Enter forbidden letters\n')
-# for line in fin:
-#     if avoids(line.strip(), forbid):
-#         print(line.strip())
+def num_avoids():
+    forbid = input('Enter forbidden letters\n')
+    counter = 0
+    for line in fin:
+        if avoids(line.strip(), forbid):
+            counter += 1
+    return counter
+# def combs(chars, choose):
+#     for i in range(chars):
+#         char = chars[i]
+#         rem_chars = chars[i+1:]
+
+#         for n in range(choose):
