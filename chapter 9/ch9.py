@@ -78,3 +78,27 @@ def all_isabc():
         if is_abecedarian(line.strip()):
             print(line.strip())
 #all_isabc()
+# %% [markdown]
+# 9-7
+# %%
+def is_double(word):
+    if len(word) <= 1: #base case 1
+        return False
+    if word[0] == word[1]: #base case 2
+        return True
+    return is_double(word[1:])
+#print(is_double('hello'))
+def is_tri_double(word):
+    if len(word) <= 5: #base case 1
+        return False
+    if not is_double(word[0:2]):
+        return is_tri_double(word[1:]) #recurse
+    if is_double(word[0:2]) and is_double(word[2:4]) and is_double(word[4:6]):
+        return True
+    return False #base case 2
+#print(is_tri_double('eeeeeef'))
+def all_tri_double():
+    for line in fin:
+        if is_tri_double(line.strip()):
+            print(line.strip())
+all_tri_double()
