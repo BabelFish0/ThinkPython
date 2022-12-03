@@ -101,4 +101,31 @@ def all_tri_double():
     for line in fin:
         if is_tri_double(line.strip()):
             print(line.strip())
-all_tri_double()
+#all_tri_double()
+# %% [markdown]
+# 9-8
+# %%
+def is_palindrome(word):
+    return word == word[::-1]
+
+def test_all_nums(start, end):
+    for num in range(start, end):
+        if is_palindrome(str(num)[2:]) and is_palindrome(str(num+1)[1:]) and is_palindrome(str(num+2)[1:5]) and is_palindrome(str(num+3)):
+            print(num)
+#test_all_nums(100000, 999999)
+# %% [markdown]
+# 9-9
+# %%
+def is_num_reversible(n1, n2):
+    return str(n1).zfill(2) == str(n2).zfill(2)[::-1]
+
+def test_nums(difference):
+    counter = 0
+    for n1 in range(difference, 120):
+        if is_num_reversible(n1, n1-difference) or is_num_reversible(n1+1, n1-difference):
+            counter += 1
+    return counter
+
+for difference in range(1, 50):
+    if test_nums(difference) == 8:
+        print(difference)

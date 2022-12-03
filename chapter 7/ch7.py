@@ -11,7 +11,6 @@ print_n('hello', 3)
 # ex 7-1
 # %%
 import math
-from symbol import factor
 def mysqrt(a):
     epsilon = 0.0000001
     y = 0
