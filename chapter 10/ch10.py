@@ -72,7 +72,22 @@ def is_anagram(list1:list, list2:list) -> bool:
     ### returns:
     `True` if lists are anagrams of each other.
     '''
-    return set(list1) == set(list2)
+    list2_copy = list2
+    for element in list1:
+        if element not in list2_copy:
+            return False
+        list2_copy.remove(element)
+    return True
+
+#10-7
+def has_duplicates(initialList:list) -> bool:
+    for i in range(len(initialList)):
+        if initialList[i] in initialList[:i] + initialList[i+1:]:
+            return True
+    return False
+
+#10-8
+
 
 def tests():
     print('Test input for 10-1: ', nestedSum([[1, 2], [3], [4, 5, 6]]))
@@ -83,7 +98,8 @@ def tests():
     chop(t)
     print('Test output for 10-4: ', t)
     print('Test input for 10-5: ', is_sorted([1, 2, 3]), is_sorted(['b', 'a']))
-    print('Test input for 10-6: ', is_anagram([1, 1, 3, 1], [1, 3, 1]))
+    print('Test input for 10-6: ', is_anagram([1, 1, 3], [1, 3, 1]))
+    print('Test input for 10-7: ', has_duplicates([1, 2, 4, 4]))
 
 if __name__ == '__main__':
     tests()
