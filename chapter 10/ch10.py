@@ -87,7 +87,20 @@ def has_duplicates(initialList:list) -> bool:
     return False
 
 #10-8
+import random
+def random_bdays(n):
+    birthdays = []
+    for i in range(n):
+        birthdays.append(random.randint(1, 365))
+    return birthdays
 
+def count_matches(nStudents, nSims):
+    count = 0
+    for i in range(nSims):
+        t = random_bdays(nStudents)
+        if has_duplicates(t):
+            count += 1
+    return count
 
 def tests():
     print('Test input for 10-1: ', nestedSum([[1, 2], [3], [4, 5, 6]]))
@@ -100,6 +113,7 @@ def tests():
     print('Test input for 10-5: ', is_sorted([1, 2, 3]), is_sorted(['b', 'a']))
     print('Test input for 10-6: ', is_anagram([1, 1, 3], [1, 3, 1]))
     print('Test input for 10-7: ', has_duplicates([1, 2, 4, 4]))
+    print('Test input for 10-8: ', count_matches(23, 100))
 
 if __name__ == '__main__':
     tests()
