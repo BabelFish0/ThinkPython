@@ -102,6 +102,31 @@ def count_matches(nStudents, nSims):
             count += 1
     return count
 
+#10-9
+import time
+def run_9(): #test speed of array methods
+    fin = open("/Users/jude/Documents/Python/think_python/ThinkPython/chapter 9/resources/words.txt") #C:\\Users\\Jude Young\\Documents\\Coding\\DofE Project Gold\\ThinkPython\\chapter 9\\resources\\words.txt
+    l = []
+    t1 = time.time()
+    print('starting test for append method')
+    for line in fin:
+        l.append(line)
+    t2 = time.time()
+    print(f'test 1 complete, time = {t2-t1}\nstarting test for add')
+    t1 = time.time()
+    for line in fin:
+        l = l + [line]
+    t2 = time.time()
+    print(f'test 2 complete, time = {t2-t1}')
+    fin.close()
+
+#10-10
+def bin_search(targetVal):
+    import ch10_q10
+    with open("/Users/jude/Documents/Python/think_python/ThinkPython/chapter 9/resources/words.txt") as fin:
+        wordList = [word.strip() for word in fin]
+        return ch10_q10.in_bisect(targetVal, wordList)
+
 def tests():
     print('Test input for 10-1: ', nestedSum([[1, 2], [3], [4, 5, 6]]))
     print('Test input for 10-2: ', cumulativeSum([1, 2, 3, 4]))
@@ -114,6 +139,9 @@ def tests():
     print('Test input for 10-6: ', is_anagram([1, 1, 3], [1, 3, 1]))
     print('Test input for 10-7: ', has_duplicates([1, 2, 4, 4]))
     print('Test input for 10-8: ', count_matches(23, 100))
+    print('Test run for 10-9: ')
+    run_9()
+    print('Test input for 10-10: ', bin_search('egg'))
 
 if __name__ == '__main__':
     tests()
