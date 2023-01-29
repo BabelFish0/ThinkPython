@@ -127,6 +127,10 @@ def bin_search(targetVal):
         wordList = [word.strip() for word in fin]
         return ch10_q10.in_bisect(targetVal, wordList)
 
+#10-11 in separate file
+
+#10-12 in separate file
+
 def tests():
     print('Test input for 10-1: ', nestedSum([[1, 2], [3], [4, 5, 6]]))
     print('Test input for 10-2: ', cumulativeSum([1, 2, 3, 4]))
